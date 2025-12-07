@@ -1,0 +1,87 @@
+/* Navbar Background + Fade Animation */
+.custom-navbar {
+  background: #ffffff;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Brand Hover */
+.brand {
+  font-size: 1.3rem;
+  color: #1e1e1e !important;
+  transition: 0.3s ease;
+}
+
+.brand:hover {
+  color: #4A90E2 !important;
+  transform: scale(1.05);
+}
+
+/* Brand icon animation */
+.brand-icon {
+  color: #4A90E2;
+  animation: popIn 0.4s ease-in-out;
+}
+
+/* Underline hover effect */
+.cool-link {
+  position: relative;
+  font-weight: 500;
+  color: #333 !important;
+  transition: color 0.3s ease;
+}
+
+.cool-link:hover {
+  color: #4A90E2 !important;
+}
+
+.cool-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background-color: #4A90E2;
+  transition: 0.3s ease;
+}
+
+.cool-link:hover::after {
+  width: 100%;
+}
+
+/* Cart Animation */
+.cart-icon-wrapper {
+  cursor: pointer;
+}
+
+.cart-icon {
+  color: #4A90E2;
+  transition: 0.3s ease;
+}
+
+.cart-icon:hover {
+  transform: rotate(10deg) scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

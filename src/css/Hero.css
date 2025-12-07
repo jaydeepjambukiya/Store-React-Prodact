@@ -1,0 +1,55 @@
+.hero-section {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("https://media.istockphoto.com/id/918381560/photo/eletronic-department-store-with-bokeh-blurred-background.jpg?s=612x612&w=0&k=20&c=keZzS1F14f1Df9OMMw5Uutw_iqU4BCjLKOTN01f-JpU=")
+      center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  animation: fadeInHero 0.8s ease-in-out;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: slideDown 0.8s ease;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  opacity: 0.9;
+  animation: fadeInText 1s ease;
+}
+
+.hero-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  animation: popIn 1.2s ease;
+}
+
+/* Animations */
+@keyframes fadeInHero {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
