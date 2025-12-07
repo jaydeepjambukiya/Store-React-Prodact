@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import { Heart } from "lucide-react";
 import "../css/ProductCard.css";
+import { useNavigate } from "react-router-dom";
 
-const ProductCard = ({ img, title, price, discountPrice, rating }) => {
+
+const ProductCard = ({ img, title, price, discountPrice, rating,id }) => {
   const [wish, setWish] = useState(false);
+  const navigate = useNavigate();
+
+  const openDetails = () => {
+    navigate(`/product/${id}`);
+  };
 
   // Calculate discount percentage
   const discountPercent = Math.round(((price - discountPrice) / price) * 100);
 
   return (
     <div className="col-md-3 mb-4">
-      <div className="product-card shadow-sm p-3 rounded text-center h-100 hover-zoom">
+      <div className="product-card shadow-sm p-3 rounded text-center h-100 hover-zoom"
+     onClick={openDetails} style={{ cursor: "pointer" }}>
 
         {/* Wishlist Icon */}
-        <div className="wishlist-icon" onClick={() => setWish(!wish)}>
+        <div className="wishlist-icon"onClick={(e) => { e.stopPropagation(); setWish(!wish);}}>
           <Heart color={wish ? "red" : "#555"} fill={wish ? "red" : "none"} />
         </div>
 

@@ -9,7 +9,8 @@ const ProdatList = () => {
       <div className="row g-4">
         {products.map((product) => (
           <ProductCard
-            key={product.id}
+          key={product.id}
+            id={product.id}
             img={product.image}
             title={product.name}
             price={product.price}
